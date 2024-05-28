@@ -44,9 +44,9 @@
     <h1>Форма обратной связи</h1>
 
     <form id="form">
-        <input type="text" placeholder="Имя" id="uname">
-        <input type="text" placeholder="Телефон" id="phone">
-        <input type="text" placeholder="кратко о задаче" id="about">
+        <input type="text" placeholder="Имя" id="tname">
+        <input type="text" placeholder="Телефон" id="tphone">
+        <input type="text" placeholder="кратко о задаче" id="tabout">
         <br>
         <button id="order">Отправить</button>
     </form>
@@ -57,9 +57,9 @@
         tg.expend();
 
         order.addEventListener("click", () => {
-            let name = document.getElementById("uname").value;
-            let phone = document.getElementById("phone").value;
-            let about = document.getElementById("about").value
+            let name = document.getElementById("tname").value;
+            let phone = document.getElementById("tphone").value;
+            let about = document.getElementById("tabout").value;
             let data = {
                 name: name,
                 phone: phone,
