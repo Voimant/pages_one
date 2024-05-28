@@ -14,7 +14,7 @@
         }
         button {
         border: 0;
-        border-radius: 15px;
+        border-radius: 5px;
         margin-top: 50px;
         height: 60 px;
         width: 200 px;
@@ -54,8 +54,18 @@
     <script>
         let tg = window.Telegram.WebApp;
         let order = document.getElementById("order")
+        tg.expend();
 
         order.addEventListener("click", () => {
+            let name = document.getElementById("uname").value;
+            let phone = document.getElementById("phone").value;
+            let about = document.getElementById("about").value
+            let data = {
+                name: name,
+                phone: phone,
+                about: about
+            }
+            tg.sendData(JSON.stringify(data));
             tg.close();
         })
     </script>
