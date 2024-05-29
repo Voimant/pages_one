@@ -53,6 +53,7 @@
         <input type="text" placeholder="Имя" id="tname">
         <input type="text" placeholder="Телефон" id="tphone">
         <input type="text" placeholder="кратко о задаче" id="tabout">
+        <div id="error"></div>
         <br>
         <button id="order">Отправить</button>
     </form>
@@ -63,9 +64,22 @@
         tg.expand();
 
         order.addEventListener("click", () => {
+            document.getElementById("error").innerText = '';
             let name = document.getElementById("tname").value;
             let phone = document.getElementById("tphone").value;
             let about = document.getElementById("tabout").value;
+            if(name.length < 5) {
+                document.getElementById("error").innerText = 'Имя не менее 5 символов';
+                return;
+            }
+            if(phone.length < 5) {
+                document.getElementById("error").innerText = 'Номер не менее 10 символов';
+                return;
+            }
+            if(about.length < 5) {
+                document.getElementById("error").innerText = 'не менее 5 символов';
+                return;
+            }
             let data = {
                 name: name,
                 phone: phone,
