@@ -72,12 +72,12 @@
                 document.getElementById("error").innerText = 'Имя не менее 5 символов';
                 return;
             }
-            if(phone.length < 5) {
+            if(phone.length < 10) {
                 document.getElementById("error").innerText = 'Номер не менее 10 символов';
                 return;
             }
             if(about.length < 5) {
-                document.getElementById("error").innerText = 'не менее 5 символов';
+                document.getElementById("error").innerText = 'распишите задачу чуть подробнее';
                 return;
             }
             let data = {
